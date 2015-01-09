@@ -29,12 +29,3 @@ INSERT INTO recut.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_REA
 VALUES (1009, 'netwrk', 'ØÓÄËÆÄ ÌÉÄÒÈÄÁÉÓ ÃÄÁÄÔÉÓ ÃÀÒÉÝáÅÀ', 4, null, null, 0, 0, 0, 0, 200001, 0);
 INSERT INTO recut.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID)
 VALUES (1010, 'netwrk', 'ØÓÄËÆÄ ÌÉÄÒÈÄÁÉÓ ÃÄÁÄÔÉÓ ÃÀÒÉÝáÅÀ', 4, null, null, 0, 0, 0, 0, 200001, 0);
-
--- sync OPERATIONS
-begin
-  for rec IN (select * from bs.billoperation)
-  loop
-    update recut.billoperation set name_bs = rec.billopername
-    where id = rec.billoperkey;
-  end loop;
-end;

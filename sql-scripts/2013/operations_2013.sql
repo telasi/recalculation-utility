@@ -29,12 +29,3 @@ INSERT INTO BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,R
 ---- current act for 2011 (previous year)
 INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
 VALUES (416, 'oper.actcorr.2013', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ ÌÉÌÃÉÍÀÒÄ ßËÉÓ 1 ÉÅËÉÓÉÃÀÍ', 4, '30-Jun-2011', null, 0, 0, 0, 0, 50113, 0);
-
--- sync OPERATIONS
-begin
-  for rec IN (select * from bs.billoperation)
-  loop
-    update billoperation set name_bs = rec.billopername
-    where id = rec.billoperkey;
-  end loop;
-end;
