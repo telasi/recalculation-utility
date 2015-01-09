@@ -19,7 +19,7 @@
 		<td valign="top">
 		<p class="commonText">თელასის გადათვლის უტილიტის ძირითადი დანიშნულებაა
 		აბონენტის ისტორიის გადათვლა. და საბოლოო შედეგის სახით ვაუჩერის ჯგუფის
-		ოპერაციათა მიღება. გადათვლის უტილიტის უკანასკნელი ვერსიაა <strong>2014/1</strong>.
+		ოპერაციათა მიღება. გადათვლის უტილიტის უკანასკნელი ვერსიაა <strong>2015/1</strong>.
 		გთხოვთ, რეგულარულად გადაამოწმოთ ახალი ვერსიის არსებობა.</p>
 		<p class="commonText"
 			style="background: #ffffaa; border: solid red 1px; padding: 2px; text-decoration: none;">
@@ -30,7 +30,7 @@
 			<a href="./recutil-linux_gtk-v1.1.12_10aug011.tar.gz">
 				<img src="images/icon_tux.gif" border="0" />
 			</a>
-			<a href="./recutil-v1401.zip">
+			<a href="./recutil-win32-201501.zip">
 				<img src="images/icon_windows.gif" border="0" />
 			</a>
 		</p>
@@ -50,6 +50,17 @@
 				<td width="33%">თარიღი</td>
 				<td width="33%">ვერსია</td>
 				<td width="33%">პლატფორმები</td>
+			</tr>
+
+			<!-- 2015/1 -->
+			<tr>
+				<td class="entry">09-Jan-2015</td>
+				<td class="entry"><a href="releases/201501.html">2015/1</a></td>
+				<td class="entry">
+					<a href="./recutil-mac-carbon-v1.0.12-20022008.zip">Mac</a>
+					<a href="./recutil-linux_gtk-v1.1.12_10aug2011.tar.gz">Linux</a>
+					<a href="./recutil-win32-201501.zip">Windows</a>
+				</td>
 			</tr>
 
 		    <!-- 2014/1 -->
@@ -96,20 +107,6 @@
 					href="./jre-6u2-windows-i586-p.exe"
 				>Windows</a></td>
 			</tr>
-
-			<!-- tr>
-				<td class="entry">ლინუქსის პოპულარული პაკეტები</td>
-				<td class="entry"><a href="http://www.ubuntu.com">Ubuntu</a> <a
-					href="http://www.opensuse.org"
-				>OpenSUSE</a></td>
-			</tr-->
-
-			<!-- tr>
-				<td class="entry">Mac</td>
-				<td class="entry"><a href="http://www.apple.com/mac">Mac</a> <a
-					href="http://www.apple.com/macosx"
-				>OS X</a></td>
-			</tr-->
 
 		</table>
 
