@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Recalculation Utility GUI Application
 Bundle-SymbolicName: telasi.recutil.guiapp;singleton:=true
-Bundle-Version: 2014
+Bundle-Version: 2015
 Bundle-Activator: telasi.recutil.gui.plugin.Plugin
 Bundle-Vendor: Telasi.ge
 Require-Bundle: org.eclipse.ui,

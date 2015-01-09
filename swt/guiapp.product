@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.4"?>
 
-<product name="RecUtil" id="telasi.recutil.guiapp.product" application="telasi.recutil.guiapp.application" version="2014" useFeatures="false">
+<product name="RecUtil" id="telasi.recutil.guiapp.product" application="telasi.recutil.guiapp.application" version="2015" useFeatures="false">
 
    <aboutInfo>
       <image path="/recalculation_utility_swt_1.0.1/about.gif"/>
       <text>
          Telasi Recalculation Utility
-v2014/11 (09-Jan-2014)
-
-2006-2014 (C) Dimitri Kurashvili (dimakura@gmail.com)
+2006-2015 (C) Dimitri Kurashvili (dimakura@gmail.com)
+09-Jan-2015
       </text>
    </aboutInfo>
 
