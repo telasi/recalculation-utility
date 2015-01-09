@@ -6,6 +6,6 @@
 			<zipfileset dir="bin" includes="**/*" />
 		</jar>
 		<copy todir="/home/dimitri/Applications/jboss-4.0.5.GA/server/default/deploy" file="RecutilService.jar" />
-		<copy todir="../recalculation_utility_swt_1.0.1" file="RecutilService.jar" />
+		<copy todir="../swt" file="RecutilService.jar" />
 	</target>
 </project>
