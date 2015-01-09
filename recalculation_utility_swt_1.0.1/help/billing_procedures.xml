@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+
+<toc label="RecUtil Help Content">
+	<topic label="ბილინგის პროცედურები"  href="help/html/billing_procedures/index.html"> 
+		<topic label="ელემენტარული ცნებები" href="help/html/billing_procedures/01_index.html">
+			<topic label="ელენერგიის აღრიცხვა" href="help/html/billing_procedures/01_01.html"/>
+			<topic label="ტარიფი" href="help/html/billing_procedures/01_02.html"/>
+		</topic>
+		<topic label="ბილინგის ოპერაციები" href="help/html/billing_procedures/02_index.html">
+		</topic>
+	</topic>
+</toc>

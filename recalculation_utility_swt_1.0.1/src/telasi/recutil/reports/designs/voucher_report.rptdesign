@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.6" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.1.v20060922-1058 Build &lt;20060926-0959></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <data-sources>
+        <script-data-source name="VoucherDS" id="48"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Operations DataSet" id="49">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">operation</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">kwh</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">gel</property>
+                    <property name="dataType">any</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">operation</property>
+                </structure>
+                <structure>
+                    <property name="columnName">kwh</property>
+                </structure>
+                <structure>
+                    <property name="columnName">gel</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">VoucherDS</property>
+            <method name="open"><![CDATA[total=operList.size();
+current=0;]]></method>
+            <method name="fetch"><![CDATA[if (current >= total) {
+	return (false);
+}
+
+var item = operList.get(current);
+
+row["operation"] = item[0];
+row["kwh"]       = item[1];
+row["gel"]       = item[2];
+
+current = current + 1;
+return (true);]]></method>
+        </script-data-set>
+        <script-data-set name="Periods DataSet" id="103">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">period</property>
+                    <property name="dataType">any</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">period</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData"/>
+            <property name="dataSource">VoucherDS</property>
+            <method name="open"><![CDATA[total1=periodList.size();
+current1=0;]]></method>
+            <method name="fetch"><![CDATA[if (current1 >= total1) {
+	return (false);
+}
+
+row["period"] = periodList.get(current1);
+
+current1 = current1 + 1;
+return (true);]]></method>
+        </script-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">0.75in</property>
+            <property name="leftMargin">0.75in</property>
+            <property name="bottomMargin">0.75in</property>
+            <property name="rightMargin">0.75in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="57">
+            <property name="canShrink">false</property>
+            <property name="width">700px</property>
+            <column id="58">
+                <property name="width">50%</property>
+            </column>
+            <column id="59">
+                <property name="width">50%</property>
+            </column>
+            <row id="60">
+                <cell id="61">
+                    <property name="paddingBottom">0pt</property>
+                    <label id="63">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">შესწორების ვაუჩერი #</text-property>
+                    </label>
+                </cell>
+                <cell id="62">
+                    <label name="lblVoucherNumber" id="64">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">12pt</property>
+                        <method name="onPrepare"><![CDATA[this.text=voucherNumber;]]></method>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="66">
+            <property name="canShrink">false</property>
+            <property name="width">700px</property>
+            <column id="67"/>
+            <column id="68"/>
+            <row id="69">
+                <cell id="70">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">2pt</property>
+                    <grid id="72">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">dotted</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">dotted</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">dotted</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">dotted</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="width">350px</property>
+                        <column id="73">
+                            <property name="width">130px</property>
+                        </column>
+                        <column id="74"/>
+                        <row id="75">
+                            <cell id="76">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="87">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">ა.მ.ც.</text-property>
+                                </label>
+                            </cell>
+                            <cell id="77">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="112">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=serviceCenter;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="78">
+                            <cell id="79">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="88">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">სახელი</text-property>
+                                </label>
+                            </cell>
+                            <cell id="80">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="113">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=customerName;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="81">
+                            <cell id="82">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="89">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">აბ. ნომერი</text-property>
+                                </label>
+                            </cell>
+                            <cell id="83">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="114">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=customerNumber;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="108">
+                            <cell id="109">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="111">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">ანგარიში</text-property>
+                                </label>
+                            </cell>
+                            <cell id="110">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="115">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=account;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="84">
+                            <cell id="85">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="90">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">მისამართი</text-property>
+                                </label>
+                            </cell>
+                            <cell id="86">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="116">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=address;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="91">
+                            <cell id="92">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="94">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <property name="fontWeight">bold</property>
+                                    <text-property name="text">თარიღი</text-property>
+                                </label>
+                            </cell>
+                            <cell id="93">
+                                <property name="paddingTop">2pt</property>
+                                <property name="paddingLeft">2pt</property>
+                                <property name="paddingBottom">1pt</property>
+                                <label id="117">
+                                    <property name="fontFamily">"Sylfaen"</property>
+                                    <property name="fontSize">10pt</property>
+                                    <method name="onPrepare"><![CDATA[this.text=correctionDate;]]></method>
+                                </label>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+                <cell id="71">
+                    <property name="paddingTop">5pt</property>
+                    <property name="paddingLeft">3pt</property>
+                    <property name="paddingBottom">5pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <grid id="140">
+                        <column id="141"/>
+                        <row id="142">
+                            <cell id="143">
+                                <property name="paddingBottom">5pt</property>
+                                <table id="95">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">dotted</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">dotted</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">dotted</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">dotted</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="width">340px</property>
+                                    <property name="dataSet">Periods DataSet</property>
+                                    <list-property name="boundDataColumns">
+                                        <structure>
+                                            <property name="name">period</property>
+                                            <expression name="expression">dataSetRow["period"]</expression>
+                                            <property name="dataType">any</property>
+                                        </structure>
+                                    </list-property>
+                                    <column id="102"/>
+                                    <header>
+                                        <row id="96">
+                                            <cell id="97">
+                                                <property name="paddingTop">2pt</property>
+                                                <property name="paddingLeft">2pt</property>
+                                                <property name="paddingBottom">1pt</property>
+                                                <label id="104">
+                                                    <property name="fontFamily">"Sylfaen"</property>
+                                                    <property name="fontSize">10pt</property>
+                                                    <property name="fontWeight">bold</property>
+                                                    <text-property name="text">შესწორების პერიოდი</text-property>
+                                                </label>
+                                            </cell>
+                                        </row>
+                                    </header>
+                                    <detail>
+                                        <row id="98">
+                                            <cell id="99">
+                                                <property name="paddingTop">2pt</property>
+                                                <property name="paddingLeft">2pt</property>
+                                                <property name="paddingBottom">1pt</property>
+                                                <property name="paddingRight">2pt</property>
+                                                <data id="105">
+                                                    <property name="fontFamily">"Sylfaen"</property>
+                                                    <property name="fontSize">10pt</property>
+                                                    <property name="textAlign">center</property>
+                                                    <property name="resultSetColumn">period</property>
+                                                </data>
+                                            </cell>
+                                        </row>
+                                    </detail>
+                                    <footer>
+                                        <row id="100">
+                                            <cell id="101">
+                                                <property name="paddingTop">2pt</property>
+                                                <property name="paddingLeft">2pt</property>
+                                                <property name="paddingBottom">1pt</property>
+                                            </cell>
+                                        </row>
+                                    </footer>
+                                </table>
+                            </cell>
+                        </row>
+                        <row id="144">
+                            <cell id="145">
+                                <grid id="127">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">dotted</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">dotted</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">dotted</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">dotted</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <property name="width">340px</property>
+                                    <column id="128">
+                                        <property name="width">200px</property>
+                                    </column>
+                                    <column id="129"/>
+                                    <row id="130">
+                                        <cell id="131">
+                                            <property name="paddingTop">2pt</property>
+                                            <property name="paddingLeft">2pt</property>
+                                            <property name="paddingBottom">1pt</property>
+                                            <label id="194">
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <text-property name="text">ვალი</text-property>
+                                            </label>
+                                            <label id="136">
+                                                <property name="fontFamily">"Sylfaen"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">შესწორებამდე</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="132">
+                                            <property name="paddingTop">2pt</property>
+                                            <property name="paddingLeft">2pt</property>
+                                            <property name="paddingBottom">1pt</property>
+                                            <label id="195"/>
+                                            <label id="138">
+                                                <property name="fontFamily">"Sylfaen"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="textAlign">left</property>
+                                                <method name="onPrepare"><![CDATA[this.text=balanceBefore;]]></method>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                    <row id="133">
+                                        <cell id="134">
+                                            <property name="paddingTop">2pt</property>
+                                            <property name="paddingLeft">2pt</property>
+                                            <property name="paddingBottom">1pt</property>
+                                            <property name="paddingRight">2pt</property>
+                                            <label id="137">
+                                                <property name="fontFamily">"Sylfaen"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">right</property>
+                                                <text-property name="text">შესწ. შემდეგ</text-property>
+                                            </label>
+                                        </cell>
+                                        <cell id="135">
+                                            <property name="paddingTop">2pt</property>
+                                            <property name="paddingLeft">2pt</property>
+                                            <property name="paddingBottom">1pt</property>
+                                            <property name="paddingRight">2pt</property>
+                                            <label id="139">
+                                                <property name="fontFamily">"Sylfaen"</property>
+                                                <property name="fontSize">10pt</property>
+                                                <property name="textAlign">left</property>
+                                                <method name="onPrepare"><![CDATA[this.text=balanceAfter;]]></method>
+                                            </label>
+                                        </cell>
+                                    </row>
+                                </grid>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <table id="32">
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="canShrink">false</property>
+            <property name="width">700px</property>
+            <property name="dataSet">Operations DataSet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">operation</property>
+                    <expression name="expression">dataSetRow["operation"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">kwh</property>
+                    <expression name="expression">dataSetRow["kwh"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="name">gel</property>
+                    <expression name="expression">dataSetRow["gel"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+            </list-property>
+            <column id="45">
+                <property name="width">320px</property>
+            </column>
+            <column id="46">
+                <property name="width">165px</property>
+            </column>
+            <column id="47">
+                <property name="width">165px</property>
+            </column>
+            <header>
+                <row id="33">
+                    <property name="fontFamily">"Sylfaen"</property>
+                    <property name="fontSize">12pt</property>
+                    <property name="fontWeight">bold</property>
+                    <cell id="34">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <label id="50">
+                            <text-property name="text">ოპერაცია</text-property>
+                        </label>
+                    </cell>
+                    <cell id="35">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <label id="54">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">თანხა, ლარი</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <label id="52">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">კვტ.სთ.</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="37">
+                    <cell id="38">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">dashed</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="paddingTop">2pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">2pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <data id="51">
+                            <property name="fontFamily">"Sylfaen"</property>
+                            <property name="fontSize">10pt</property>
+                            <property name="resultSetColumn">operation</property>
+                        </data>
+                    </cell>
+                    <cell id="39">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">dashed</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="paddingTop">2pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">2pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <data id="55">
+                            <property name="fontFamily">"Sylfaen"</property>
+                            <property name="fontSize">10pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">gel</property>
+                        </data>
+                    </cell>
+                    <cell id="40">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">dashed</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="paddingTop">2pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">2pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <data id="53">
+                            <property name="fontFamily">"Sylfaen"</property>
+                            <property name="fontSize">10pt</property>
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">kwh</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="41">
+                    <cell id="42"/>
+                    <cell id="43"/>
+                    <cell id="44"/>
+                </row>
+            </footer>
+        </table>
+        <grid id="118">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="canShrink">false</property>
+            <property name="width">700px</property>
+            <column id="119"/>
+            <row id="121">
+                <property name="backgroundColor">#FFFFFF</property>
+                <cell id="122">
+                    <property name="paddingTop">10pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <label id="106">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">12pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">შესწორების მიზეზი:</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="124">
+                <cell id="125">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderBottomWidth">thin</property>
+                    <label name="lblReason" id="107">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="paddingTop">5pt</property>
+                        <property name="paddingLeft">5pt</property>
+                        <property name="paddingBottom">5pt</property>
+                        <property name="paddingRight">5pt</property>
+                        <method name="onPrepare"><![CDATA[this.text=reason;]]></method>
+                    </label>
+                </cell>
+            </row>
+        </grid>
+        <grid id="165">
+            <property name="canShrink">false</property>
+            <property name="width">700px</property>
+            <column id="166">
+                <property name="width">17%</property>
+            </column>
+            <column id="167">
+                <property name="width">17%</property>
+            </column>
+            <column id="168">
+                <property name="width">17%</property>
+            </column>
+            <column id="169">
+                <property name="width">17%</property>
+            </column>
+            <column id="170">
+                <property name="width">17%</property>
+            </column>
+            <column id="171">
+                <property name="width">17%</property>
+            </column>
+            <row id="172">
+                <cell id="173">
+                    <property name="paddingTop">25pt</property>
+                    <label id="186">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">ოპერატორი</text-property>
+                    </label>
+                </cell>
+                <cell id="174">
+                    <property name="paddingTop">25pt</property>
+                    <label id="191">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                    </label>
+                </cell>
+                <cell id="175">
+                    <property name="paddingTop">25pt</property>
+                    <label id="187">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">ზედამხედველი</text-property>
+                    </label>
+                </cell>
+                <cell id="176">
+                    <property name="paddingTop">25pt</property>
+                    <label id="192">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                    </label>
+                </cell>
+                <cell id="177">
+                    <property name="paddingTop">25pt</property>
+                    <label id="188">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">10pt</property>
+                        <property name="textAlign">right</property>
+                        <text-property name="text">აბონენტი</text-property>
+                    </label>
+                </cell>
+                <cell id="178">
+                    <property name="paddingTop">25pt</property>
+                    <label id="193">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                    </label>
+                </cell>
+            </row>
+            <row id="179">
+                <cell id="180"/>
+                <cell id="181">
+                    <label id="189">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="textAlign">center</property>
+                        <method name="onPrepare"><![CDATA[this.text=operator;]]></method>
+                    </label>
+                </cell>
+                <cell id="182"/>
+                <cell id="183">
+                    <label id="190">
+                        <property name="fontFamily">"Sylfaen"</property>
+                        <property name="fontSize">8pt</property>
+                        <property name="textAlign">center</property>
+                        <method name="onPrepare"><![CDATA[this.text=advisor;]]></method>
+                    </label>
+                </cell>
+                <cell id="184"/>
+                <cell id="185"/>
+            </row>
+        </grid>
+    </body>
+</report>

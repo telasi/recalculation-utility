@@ -1,0 +1,10 @@
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (530,'charge correction 2008','2008 ß. ÃÀÒÉÝáÅÉÓ ÊÏÒÄØÔÉÒÄÁÀ',4,null,null,0,1,0,0,100,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (531,'discharge 2008','2008 ß. ÃÀÒÉÝáÅÉÓ ÌÏáÓÍÀ',4,null,null,0,1,0,0,20,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (532,'corrected charge 2008','2008 ß. ÊÏÒÄØÔÉÒÄÁÖËÉ ÃÀÒÉÝáÅÀ',4,null,null,0,1,0,0,20,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (533,'debt correction 2008','2008 ß. ÅÀËÉÓ ÊÏÒÄØÔÉÒÄÁÀ',4,null,null,0,1,0,0,29,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (534,'compensation correction 2008','2008 ß.ÊÏÌÐÄÍÓÀÝÉÉÓ ÊÏÒÄØÔÉÒÄÁÀ',4,null,null,0,1,0,0,116,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (535,'discharge compensation 2008','2008 ß.ÊÏÌÐÄÍÓÀÝÉÉÓ ÌÏáÓÍÀ',4,null,null,0,1,0,0,52,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (536,'corrected compensation 2008','2008 ß.ÊÏÒÄØÔÉÒÄÁÖËÉ ÊÏÌÐÄÍÓÀÝÉÀ',4,null,null,0,1,0,0,52,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (537,'percent subsidy correction 2008','2008 ß. ÐÒÏÝ. ÛÄÙÀÅÀÈÉÓ ÊÏÒÄØÔÉÒÄÁÀ',4,null,null,0,1,0,0,106,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (538,'discharge percent subsidy 2008','2008 ß. ÐÒÏÝ. ÛÄÙÀÅÀÈÉÓ ÌÏáÓÍÀ',4,null,null,0,1,0,0,75,0);
+Insert into BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) values (539,'corrected percent subsidy 2008','2008 ß.  ÛÄÓßÏÒÄÁÖËÉ ÐÒÏÝ ÛÄÙÀÅÀÈÉ',4,null,null,0,1,0,0,75,0);

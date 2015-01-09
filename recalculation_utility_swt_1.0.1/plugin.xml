@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension-point id="customer_history" name="Customer History" schema="schema/customer_history.exsd"/>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="telasi.recutil.gui.app.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="telasi.recutil.gui.app.Perspective"
+            icon="icons/16x16/bop/voucher.png"
+            id="ge.telasi.guiapp.perspective"
+            name="Recalculation Perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.BillOperationView"
+            icon="icons/16x16/bop.png"
+            id="ge.telasi.recut.guiapp.views.BillOperationView"
+            name="BillOperationView"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.CustomerHistoryView"
+            icon="icons/16x16/user.png"
+            id="ge.telasi.recut.guiapp.views.CustomerHistoryView"
+            name="CustomerHistoryView"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.InspCpHistoryView"
+            icon="icons/16x16/bop/power.png"
+            id="ge.telasi.recut.guiapp.views.InspCpHistoryView"
+            name="InspCpHistoryView"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.RecalculationView"
+            icon="icons/16x16/bop/voucher.png"
+            id="ge.telasi.recut.guiapp.views.RecalculationView"
+            name="RecalculationView"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.UserView"
+            icon="icons/16x16/login.png"
+            id="ge.telasi.recut.guiapp.views.UserView"
+            name="UserView"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.AvearageChargeView"
+            icon="icons/16x16/bop/charge.png"
+            id="ge.telasi.recut.guiapp.views.AvearageChargeView"
+            name="Avearage Charge View"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.CustomerSearchView"
+            icon="icons/16x16/find.png"
+            id="ge.telasi.recut.guiapp.views.CustomerSearchView"
+            name="Customer Search"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.RecalcExchangeView"
+            icon="icons/16x16/server.png"
+            id="telasi.recutil.gui.views.recalcExchangeView"
+            name="Recalculations Managment"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.views.RecalcSearchView"
+            icon="icons/16x16/find.png"
+            id="telasi.recutil.gui.views.RecalcSearchView"
+            name="Recalculations Search"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.comp.tpowner.TpOwnerCalculationView"
+            icon="icons/16x16/calc.png"
+            id="telasi.recutil.gui.comp.tpowner.TpOwnerCalculationView"
+            name="TP Owners Calculations"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.comp.tpowner.TransformatorsView"
+            icon="icons/16x16/power.png"
+            id="telasi.recutil.gui.comp.tpowner.TransformatorsView"
+            name="Transformators"/>
+      <view
+            allowMultiple="true"
+            class="telasi.recutil.gui.comp.tpowner.TpownerView"
+            icon="icons/16x16/tpowner.png"
+            id="telasi.recutil.gui.comp.tpowner.TpownerView"
+            name="Tp Owner"/>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="telasi.recutil.guiapp.application"
+            name="RecUtil">
+         <property
+               name="aboutText"
+               value="Telasi Recalculation Utility&#x0A;v2014/11 (09-Jan-2014)&#x0A;&#x0A;2006-2014 (C) Dimitri Kurashvili (dimakura@gmail.com)"/>
+         <property
+               name="aboutImage"
+               value="about.gif"/>
+         <property
+               name="windowImages"
+               value="icons/16x16/logo.gif"/>
+         <property
+               name="appName"
+               value="RecUtil">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+      </product>
+   </extension>
+   <extension point="telasi.recutil.guiapp.customer_history">
+      <history
+            class="telasi.recutil.gui.comp.cust.histories.CustomerChargeHistoryPaneForHistory"
+            icon="icons/16x16/bop/reading.png"
+            name="Charge History"/>
+      <history
+            class="telasi.recutil.gui.comp.cust.histories.CustomerTariffHistoryPane"
+            icon="icons/16x16/bop/payment.png"
+            name="Tariff History"/>
+   </extension>
+   <extension
+         point="org.eclipse.help.toc">
+      <toc
+            file="help/main.xml"
+            primary="true"/>
+      <toc
+            file="help/general.xml"/>
+      <toc
+            file="help/billing_procedures.xml"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="telasi.recutil.gui.preferences.RootPreferencesPage"
+            id="telasi.recutil.RootPreferecePage"
+            name="Recalculation Utility">
+      </page>
+      <page
+            category="telasi.recutil.RootPreferecePage"
+            class="telasi.recutil.gui.preferences.ReportPreferencesPage"
+            id="telasi.recutil.ReportPreferences"
+            name="Reports">
+      </page>
+   </extension>
+
+</plugin>

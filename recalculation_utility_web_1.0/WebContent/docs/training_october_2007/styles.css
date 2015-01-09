@@ -1,0 +1,25 @@
+h1 {
+  font-size: 14pt;
+} 
+
+h2 {
+  font-size: 12pt;
+}
+
+p {
+  font-size: 10pt;
+}
+
+td.header {
+  font-size: 10pt;
+  font-weight: bold;
+  color: white;
+  background: black;
+  border-bottom: 1px solid black;
+}
+
+td.common {
+  font-size: 10pt;
+  border-bottom: 1px solid black;
+}
+

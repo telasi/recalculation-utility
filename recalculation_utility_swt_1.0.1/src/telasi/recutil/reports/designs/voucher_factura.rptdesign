@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Written by Eclipse BIRT 2.0 -->
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 2.1.2.v20070205-1728 Build &lt;20070205-1728></property>
+    <property name="units">in</property>
+    <property name="comments">Copyright (c) 2006 &lt;&lt;Your Company Name here>></property>
+    <data-sources>
+        <script-data-source name="Data Source" id="22"/>
+    </data-sources>
+    <data-sets>
+        <script-data-set name="Data Set" id="23">
+            <list-property name="resultSetHints">
+                <structure>
+                    <property name="position">0</property>
+                    <property name="name">operation</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">itemid</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">itemdate</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">kwh</property>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">gel</property>
+                    <property name="dataType">any</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">operation</property>
+                    <property name="displayName">Operation</property>
+                </structure>
+                <structure>
+                    <property name="columnName">itemid</property>
+                    <property name="displayName">Item ID</property>
+                </structure>
+                <structure>
+                    <property name="columnName">itemdate</property>
+                    <property name="displayName">Item Date</property>
+                </structure>
+                <structure>
+                    <property name="columnName">kwh</property>
+                    <property name="displayName">kWh</property>
+                </structure>
+                <structure>
+                    <property name="columnName">gel</property>
+                    <property name="displayName">GEL</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">operation</property>
+                        <property name="dataType">any</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">itemid</property>
+                        <property name="dataType">any</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">itemdate</property>
+                        <property name="dataType">any</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">kwh</property>
+                        <property name="dataType">any</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">gel</property>
+                        <property name="dataType">any</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <method name="open"><![CDATA[total=details.size();
+current=0;]]></method>
+            <method name="fetch"><![CDATA[if (current >= total) {
+	return (false);
+}
+
+var item = details.get(current);
+
+row["operation"] = item[0];
+row["itemdate"] = item[1];
+row["itemid"] = item[2];
+row["kwh"] = item[3];
+row["gel"] = item[4];
+
+current = current + 1;
+return (true);]]></method>
+        </script-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="topMargin">0.5in</property>
+            <property name="leftMargin">0.5in</property>
+            <property name="bottomMargin">0.5in</property>
+            <property name="rightMargin">0.5in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="width">700px</property>
+            <column id="5"/>
+            <column id="6"/>
+            <row id="7">
+                <cell id="8">
+                    <label id="16">
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">შესწორების ვაუჩერის ნომერი</text-property>
+                    </label>
+                </cell>
+                <cell id="9">
+                    <label id="19">
+                        <property name="fontSize">10pt</property>
+                        <method name="onPrepare"><![CDATA[this.text=voucherNumber;]]></method>
+                    </label>
+                </cell>
+            </row>
+            <row id="10">
+                <cell id="11">
+                    <label id="17">
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">აბონენტის ნომერი/ანგარიში</text-property>
+                    </label>
+                </cell>
+                <cell id="12">
+                    <label id="20">
+                        <property name="fontSize">10pt</property>
+                        <method name="onPrepare"><![CDATA[this.text=customerNumber + " (" + accountNumber + ")";]]></method>
+                    </label>
+                </cell>
+            </row>
+            <row id="13">
+                <cell id="14">
+                    <label id="18">
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">თარიღი</text-property>
+                    </label>
+                </cell>
+                <cell id="15">
+                    <label id="67">
+                        <property name="fontSize">10pt</property>
+                        <method name="onPrepare"><![CDATA[this.text=correctionDate]]></method>
+                    </label>
+                </cell>
+            </row>
+            <row id="59">
+                <cell id="60">
+                    <label id="66"/>
+                </cell>
+                <cell id="61"/>
+            </row>
+            <row id="62">
+                <cell id="63">
+                    <label id="65">
+                        <property name="fontSize">10pt</property>
+                        <text-property name="text">შესწორების ვაუჩერის დეტალური გაშლა:</text-property>
+                    </label>
+                </cell>
+                <cell id="64"/>
+            </row>
+        </grid>
+        <table id="24">
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+            <property name="marginTop">5pt</property>
+            <property name="width">700px</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">operation</property>
+                    <expression name="expression">dataSetRow["operation"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="name">itemid</property>
+                    <expression name="expression">dataSetRow["itemid"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="name">itemdate</property>
+                    <expression name="expression">dataSetRow["itemdate"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="name">kwh</property>
+                    <expression name="expression">dataSetRow["kwh"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+                <structure>
+                    <property name="name">gel</property>
+                    <expression name="expression">dataSetRow["gel"]</expression>
+                    <property name="dataType">any</property>
+                </structure>
+            </list-property>
+            <column id="43">
+                <property name="width">250px</property>
+            </column>
+            <column id="44">
+                <property name="width">90px</property>
+            </column>
+            <column id="45">
+                <property name="width">80px</property>
+            </column>
+            <column id="46">
+                <property name="width">80px</property>
+            </column>
+            <column id="47">
+                <property name="width">80px</property>
+            </column>
+            <header>
+                <row id="25">
+                    <cell id="26">
+                        <label id="48">
+                            <property name="fontSize">10pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Operation</text-property>
+                        </label>
+                    </cell>
+                    <cell id="27">
+                        <label id="50">
+                            <property name="fontSize">10pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Item Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="52">
+                            <property name="fontSize">10pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">Item ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="29">
+                        <label id="54">
+                            <property name="fontSize">10pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">kWh</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="56">
+                            <property name="fontSize">10pt</property>
+                            <property name="fontWeight">bold</property>
+                            <text-property name="text">GEL</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="31">
+                    <cell id="32">
+                        <data id="49">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">operation</property>
+                        </data>
+                    </cell>
+                    <cell id="33">
+                        <data id="53">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">itemdate</property>
+                        </data>
+                    </cell>
+                    <cell id="34">
+                        <data id="51">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">itemid</property>
+                        </data>
+                    </cell>
+                    <cell id="35">
+                        <data id="55">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">kwh</property>
+                        </data>
+                    </cell>
+                    <cell id="36">
+                        <data id="57">
+                            <property name="fontSize">8pt</property>
+                            <property name="resultSetColumn">gel</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="37">
+                    <cell id="38"/>
+                    <cell id="39"/>
+                    <cell id="40"/>
+                    <cell id="41"/>
+                    <cell id="42"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,10 @@
+truncate table logs;
+truncate table recalc_cut;
+truncate table recalc_instcp;
+truncate table recalc_item;
+delete recalc_interval;
+truncate table recalc_regular;
+truncate table recalc_rooms;
+truncate table recalc_save;
+truncate table recalc_tariffs;
+delete recalc;

@@ -1,0 +1,37 @@
+/**
+ * აქტები წლების მიხედვით გაყოფილი.
+ * ------------------------------------------------------
+ * გიორგი ლომიძის წერილი №1-15/1377, 10-Mar-2009
+ */
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (401, 'oper.actcorr.1999', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -1999ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50101, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (402, 'oper.actcorr.2000', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2000ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50102, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (403, 'oper.actcorr.2001', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2001ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50103, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (404, 'oper.actcorr.2002', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2002ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50104, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (405, 'oper.actcorr.2003', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2003ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50105, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (406, 'oper.actcorr.2004', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2004ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50106, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (407, 'oper.actcorr.2005', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2005ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50107, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (408, 'oper.actcorr.2005_2', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ  ÃÙÂ-Ó ÝÅËÉËÄÁÉÓ ÛÄÌÃÄÂ-2005ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50108, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (409, 'oper.actcorr.2006', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2006ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50109, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (410, 'oper.actcorr.2007', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2007ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50110, 0);
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (411, 'oper.actcorr.2008', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ -2008ß', 4, '01-Mar-2009', null, 0, 0, 0, 0, 50111, 0);
+
+/**
+ * 33 და 180 განიხილება როგორც ერთჯერადი აქტის ოპერაციები.
+ */
+UPDATE RECUT.BILLOPERATION SET DIFF_GROUP_ID = 17 WHERE ID IN (33, 180);
+
+/**
+ * New name for operation 180.
+ */
+UPDATE RECUT.BILLOPERATION SET NAME_BS = 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ ÌÉÌÃÉÍÀÒÄ ßËÉÓ (2009ß)' WHERE ID = 180;
