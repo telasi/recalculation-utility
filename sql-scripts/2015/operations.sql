@@ -1,0 +1,19 @@
+---- charge (correction)
+INSERT INTO RECUT.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) VALUES
+(790, '2015 correction', '2015 ß.ÃÀÒÉÝáÅÉÓ ÊÏÒÄØÔÉÒÄÁÀ', 4, null, null, 0, 1, 0, 0, 804, 0);
+INSERT INTO RECUT.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) VALUES
+(791, '2015 discharge', '2015 ß.ÃÀÒÉÝáÅÉÓ ÌÏáÓÍÀ', 4, null, null, 0, 1, 0, 0, 164, 0);
+INSERT INTO RECUT.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) VALUES
+(792, '2015 corrected', '2015 ß.ÊÏÒÄØÔÉÒÄÁÖËÉ ÃÀÒÉÝáÅÀ', 4, null, null, 0, 1, 0, 0, 164, 0);
+
+---- debt (correction)
+INSERT INTO RECUT.BILLOPERATION (ID,NAME,NAME_BS,TYPE_ID,D1,D2,REQ_CYCLE,REQ_READING,REQ_KWH,REQ_GEL,SEQ,DIFF_GROUP_ID) VALUES
+(793, '2015 debt correction', '2015 ß.ÅÀËÉÓ ÊÏÒÄØÔÉÒÄÁÀ', 4, null, null, 0, 1, 0, 0, 236, 0);
+
+---- previous year's actcorrection
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (418, 'oper.actcorr.2014', 'ÄÒÈãÄÒÀÃÉ ÀØÔÉ 2014ß', 4, null, null, 0, 0, 0, 0, 50113, 0);
+
+---- new subsidy
+INSERT INTO RECUT.BILLOPERATION (ID, NAME, NAME_BS, TYPE_ID, D1, D2, REQ_CYCLE, REQ_READING, REQ_KWH, REQ_GEL, SEQ, DIFF_GROUP_ID)
+VALUES (510, 'subsidy510', 'ÄÍÄÒÂÄÔÉÊÉÓ ÅÄÔÄÒÀÍÄÁÉ (200ÊÅÔ)', 5, null, null, 0, 0, 0, 0, 100000, 14);
