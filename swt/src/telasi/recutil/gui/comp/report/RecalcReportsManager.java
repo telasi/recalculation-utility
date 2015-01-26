@@ -32,6 +32,7 @@ import org.eclipse.swt.widgets.Shell;
 import telasi.recutil.beans.DiffDetail;
 import telasi.recutil.beans.Operation;
 import telasi.recutil.beans.RecalcVoucher;
+import telasi.recutil.beans.TrashVoucher;
 import telasi.recutil.gui.app.Cache;
 import telasi.recutil.gui.utils.GUITranslator;
 import telasi.recutil.reports.recalc.VoucherFacturaReport;
@@ -71,6 +72,17 @@ public class RecalcReportsManager {
 				map.put(row[0], GUITranslator.GEO_ASCII_TO_KA(row[1]));
 			}
 		}
+		// generate trash list
+		List trashList = new ArrayList();
+		for (int i = 0; i < trashVouchers.size(); i++) {
+			TrashVoucher v = (TrashVoucher) trashVouchers.get(i);
+			String[] row = new String[3];
+			row[0] = TrashVoucher.findOperation(v.getTrashOperation()).getName();
+			row[1] = nf.format(v.getKwh());
+			row[1] = nf.format(v.getGel());
+			trashList.add(row);
+		}
+
 		Object voucherNumber = map.get("application.voucher.number");
 		Object serviceCeneter = map.get("application.voucher.businessCenter");
 		Object customerName = map.get("application.voucher.customer");
@@ -88,7 +100,7 @@ public class RecalcReportsManager {
 		// assign parameters
 		report.setOperList(operList);
 		report.setPeriodList(periodList);
-		report.setTrashList(trashVouchers);
+		report.setTrashList(trashList);
 		report.setVoucherNumber(voucherNumber == null ? "" : voucherNumber.toString());
 		report.setServiceCenter(serviceCeneter == null ? "" : serviceCeneter.toString());
 		report.setCustomerNumber(customerNumber == null ? "" : customerNumber.toString());
