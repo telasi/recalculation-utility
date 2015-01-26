@@ -44,17 +44,29 @@ public class RecalcReportsManager {
 
 	@SuppressWarnings("unchecked")
 	public static void openVoucherReport(RecalcVoucher voucher, List trashVouchers, Shell shell) {
-		// create report object
 		VoucherReport report = new VoucherReport();
 
-		// generate parameters
+		List trashOperList = new ArrayList();
+		if (trashVouchers != null) {
+			for (int i = 0; i < trashVouchers.size(); i++) {
+				String row[] = new String[3];
+				TrashVoucher vouch = (TrashVoucher) trashVouchers.get(i);
+				row[0] = TrashVoucher.findOperation(vouch.getTrashOperation()).getName();
+				row[1] = nf.format(vouch.getKwh());
+				row[2] = nf.format(vouch.getGel());
+				trashOperList.add(row);
+			}
+		}
+
 		List operList = new ArrayList();
-		for (int i = 0; voucher.getDetails() != null && i < voucher.getDetails().size(); i++) {
+		for (int i = 0; voucher.getDetails() != null
+				&& i < voucher.getDetails().size(); i++) {
 			DiffDetail detail = (DiffDetail) voucher.getDetails().get(i);
 			String[] row = new String[3];
 			Operation operation = detail.getOperation();
 			try {
-				operation = Cache.findOperationById(detail.getOperation().getId());
+				operation = Cache.findOperationById(detail.getOperation()
+						.getId());
 			} catch (Exception ex) {
 			}
 			row[0] = GUITranslator.GEO_ASCII_TO_KA(operation.getName());
@@ -62,25 +74,17 @@ public class RecalcReportsManager {
 			row[2] = nf.format(detail.getOriginalGel());
 			operList.add(row);
 		}
+
 		Map map = new HashMap();
 		List periodList = new ArrayList();
-		for (int i = 0; voucher.getProperties() != null && i < voucher.getProperties().size(); i++) {
+		for (int i = 0; voucher.getProperties() != null
+				&& i < voucher.getProperties().size(); i++) {
 			String[] row = (String[]) voucher.getProperties().get(i);
 			if ("application.voucher.interval".equals(row[0])) {
 				periodList.add(row[1]);
 			} else {
 				map.put(row[0], GUITranslator.GEO_ASCII_TO_KA(row[1]));
 			}
-		}
-		// generate trash list
-		List trashList = new ArrayList();
-		for (int i = 0; i < trashVouchers.size(); i++) {
-			TrashVoucher v = (TrashVoucher) trashVouchers.get(i);
-			String[] row = new String[3];
-			row[0] = TrashVoucher.findOperation(v.getTrashOperation()).getName();
-			row[1] = nf.format(v.getKwh());
-			row[1] = nf.format(v.getGel());
-			trashList.add(row);
 		}
 
 		Object voucherNumber = map.get("application.voucher.number");
@@ -100,7 +104,7 @@ public class RecalcReportsManager {
 		// assign parameters
 		report.setOperList(operList);
 		report.setPeriodList(periodList);
-		report.setTrashList(trashList);
+		report.setTrashList(trashOperList);
 		report.setVoucherNumber(voucherNumber == null ? "" : voucherNumber.toString());
 		report.setServiceCenter(serviceCeneter == null ? "" : serviceCeneter.toString());
 		report.setCustomerNumber(customerNumber == null ? "" : customerNumber.toString());
@@ -125,7 +129,8 @@ public class RecalcReportsManager {
 	}
 
 	@SuppressWarnings("unchecked")
-	public static void operVoucherFacturaReport(RecalcVoucher voucher, List facturaDetails, Shell shell) {
+	public static void operVoucherFacturaReport(RecalcVoucher voucher,
+			List facturaDetails, Shell shell) {
 		Map map = new HashMap();
 		List periodList = new ArrayList();
 		for (int i = 0; voucher.getProperties() != null && i < voucher.getProperties().size(); i++) {
