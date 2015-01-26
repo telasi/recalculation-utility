@@ -8,7 +8,7 @@
       <text>
          Telasi Recalculation Utility
 2006-2015 (C) Dimitri Kurashvili (dimakura@gmail.com)
-09-Jan-2015
+26-Jan-2015
       </text>
    </aboutInfo>
 
@@ -16,6 +16,7 @@
    </configIni>
 
    <launcherArgs>
+      <vmArgs>-Dfile.encoding=utf-8</vmArgs>
    </launcherArgs>
 
    <windowImages i16="/recalculation_utility_swt_1.0.1/icons/16x16/logo.gif"/>
