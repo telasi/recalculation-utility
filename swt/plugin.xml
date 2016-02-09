@@ -104,13 +104,13 @@
             name="RecUtil">
          <property
                name="aboutText"
-               value="Telasi Recalculation Utility&#x0A;v2014/11 (09-Jan-2014)&#x0A;&#x0A;2006-2014 (C) Dimitri Kurashvili (dimakura@gmail.com)"/>
+               value="Telasi Recalculation Utility&#x0A;2006-2015 (C) Dimitri Kurashvili (dimakura@gmail.com)&#x0A;26-Jan-2015"/>
          <property
                name="aboutImage"
-               value="about.gif"/>
+               value="/recalculation_utility_swt_1.0.1/about.gif"/>
          <property
                name="windowImages"
-               value="icons/16x16/logo.gif"/>
+               value="/recalculation_utility_swt_1.0.1/icons/16x16/logo.gif"/>
          <property
                name="appName"
                value="RecUtil">

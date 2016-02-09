@@ -122,6 +122,7 @@ public class ActionConstants {
 	public static final int OTHER_INST_CP_HISTORY_AFTER_2003_UPDATE = 1004;
 	public static final int OTHER_AVRG_CHARGE_RECALCULATION_SELECT = 1010;
 	public static final int OTHER_AVRG_CHARGE_CALCULATION = 1011;
+	public static final int OTHER_NETWORK_PAYMENT_TRANSFER = 1025;
 	// High voltage
 	public static final int ACT_TPOWNER_ACCOUNTS_SELECT = 5000;
 	public static final int ACT_TPOWNER_GENERATE_RECALC = 5001;
@@ -225,6 +226,7 @@ public class ActionConstants {
 		ALL_ACTIONS.add(new Integer(OTHER_INST_CP_HISTORY_AFTER_2003_UPDATE));
 		//ALL_ACTIONS.add(new Integer(OTHER_AVRG_CHARGE_RECALCULATION_SELECT));
 		ALL_ACTIONS.add(new Integer(OTHER_AVRG_CHARGE_CALCULATION));
+		ALL_ACTIONS.add(new Integer(OTHER_NETWORK_PAYMENT_TRANSFER));
 		// high voltage
 		ALL_ACTIONS.add(new Integer(ACT_TPOWNER_ACCOUNTS_SELECT));
 		ALL_ACTIONS.add(new Integer(ACT_TPOWNER_GENERATE_RECALC));
