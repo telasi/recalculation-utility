@@ -26,6 +26,7 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PlatformUI;
 
+import telasi.recutil.beans.TrashVoucher;
 import telasi.recutil.beans.User;
 import telasi.recutil.gui.comp.security.LoginDialog;
 import telasi.recutil.gui.ejb.DefaultRecutilClient;
@@ -42,12 +43,15 @@ public class Application implements IPlatformRunnable {
 	public static User USER;
 	public static String PASSWORD;
 
+	
+	
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see org.eclipse.core.runtime.IPlatformRunnable#run(java.lang.Object)
 	 */
 	public Object run(Object args) throws Exception {
+		
 		Display display = PlatformUI.createDisplay();
 		try {
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());

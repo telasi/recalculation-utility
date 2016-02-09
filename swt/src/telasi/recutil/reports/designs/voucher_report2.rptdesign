@@ -113,12 +113,14 @@ current = 0;]]></method>
 	return false;
 }
 
-var item = operList.get(current);
+try {
+  var item = operList.get(current);
 
-row["num"] = (current + 1) + "";
-row["operation"] = item[0];
-row["gel"] = item[2];
-row["kwh"] = item[1];
+  row["num"] = (current + 1) + "";
+  row["operation"] = item[0];
+  row["gel"] = item[2];
+  row["kwh"] = item[1];
+} catch(e) {}
 
 current = current + 1;
 return (true);]]></method>
@@ -178,11 +180,16 @@ current = 0;]]></method>
 	return false;
 }
 
-var item = trashList.get(current);
-
-row["operation"] = item[0];
-row["gel"] = item[2];
-row["kwh"] = item[1];
+try {
+  var item = trashList.get(current);
+  row["operation"] = item[0];
+  row["gel"] = item[2];
+  row["kwh"] = item[1];
+  //row['operation'] = item.voucherOperation;
+  //row['gel'] = item.gel;
+  //row['kwh'] = item.kwh;
+} catch(e) {
+}
 
 current = current + 1;
 return (true);]]></method>
@@ -774,7 +781,7 @@ return (true);]]></method>
                         <property name="borderTopStyle">solid</property>
                         <property name="borderTopWidth">1px</property>
                         <data id="196">
-                            <property name="fontSize">10%</property>
+                            <property name="fontSize">10pt</property>
                             <property name="resultSetColumn">operation</property>
                         </data>
                     </cell>
@@ -793,6 +800,10 @@ return (true);]]></method>
                         <property name="borderTopWidth">1px</property>
                         <data id="198">
                             <property name="fontSize">10pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">Fixed</property>
+                            </structure>
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">gel</property>
                         </data>
@@ -812,6 +823,10 @@ return (true);]]></method>
                         <property name="borderTopWidth">1px</property>
                         <data id="200">
                             <property name="fontSize">10pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">Fixed</property>
+                            </structure>
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">kwh</property>
                         </data>
@@ -850,6 +865,10 @@ return (true);]]></method>
                         <property name="textAlign">right</property>
                         <data id="208">
                             <property name="fontSize">10pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">Fixed</property>
+                            </structure>
                             <property name="resultSetColumn">Aggregation</property>
                         </data>
                     </cell>
@@ -868,6 +887,10 @@ return (true);]]></method>
                         <property name="borderTopWidth">1px</property>
                         <data id="209">
                             <property name="fontSize">10pt</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">Fixed</property>
+                            </structure>
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">Aggregation_1</property>
                         </data>

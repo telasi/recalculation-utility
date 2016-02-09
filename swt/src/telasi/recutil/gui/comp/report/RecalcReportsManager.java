@@ -74,7 +74,6 @@ public class RecalcReportsManager {
 			row[2] = nf.format(detail.getOriginalGel());
 			operList.add(row);
 		}
-
 		Map map = new HashMap();
 		List periodList = new ArrayList();
 		for (int i = 0; voucher.getProperties() != null
@@ -86,7 +85,6 @@ public class RecalcReportsManager {
 				map.put(row[0], GUITranslator.GEO_ASCII_TO_KA(row[1]));
 			}
 		}
-
 		Object voucherNumber = map.get("application.voucher.number");
 		Object serviceCeneter = map.get("application.voucher.businessCenter");
 		Object customerName = map.get("application.voucher.customer");
