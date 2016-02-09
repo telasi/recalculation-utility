@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="lib" path="RecutilService.jar" sourcepath="/home/dimitri/Projects/recutil/ejb/src/telasi/recutil/beans">
+	<classpathentry exported="true" kind="lib" path="RecutilService.jar" sourcepath="/recalculation_utility_ejb_1.0.1"
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="../"/>
 		</attributes>
