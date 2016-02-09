@@ -37,10 +37,10 @@ public class TrashUtils {
 
 	static final List/* Interval */INTERVALS = new ArrayList();
 	static {
-		INTERVALS.add(new Interval(null, new Date(2011, 7, 31), 0, false));
-		INTERVALS.add(new Interval(new Date(2011, 8, 1), new Date(2012, 10, 31), 0.05, true));
-		INTERVALS.add(new Interval(new Date(2012, 11, 1), new Date(2013, 3, 31), 0.025, false));
-		INTERVALS.add(new Interval(new Date(2013, 4, 1), new Date(2013, 5, 31), 0.05, false));
+		INTERVALS.add(new Interval(                null,  new Date(2011, 7, 31),  0.000, false));
+		INTERVALS.add(new Interval(new Date(2011, 8, 1),  new Date(2012, 10, 31), 0.050, true));
+		INTERVALS.add(new Interval(new Date(2012, 11, 1), new Date(2013, 3, 31),  0.025, false));
+		INTERVALS.add(new Interval(new Date(2013, 4, 1),  new Date(2013, 5, 31),  0.050, false));
 	}
 
 	public static double calculateStandardGel(double kwh, Date d1, Date d2) {
