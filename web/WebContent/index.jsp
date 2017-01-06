@@ -51,10 +51,32 @@
 				<td width="33%">ვერსია</td>
 				<td width="33%">პლატფორმები</td>
 			</tr>
+			
+			<!-- 2017 -->
+			<tr>
+				<td class="entry">06-Jan-2017</td>
+				<td class="entry"><a href="releases/2017.html">2017</a></td>
+				<td class="entry">
+					<a href="./recutil-mac-carbon-v1.0.12-20022008.zip">Mac</a>
+					<a href="./recutil-linux_gtk-v1.1.12_10aug2011.tar.gz">Linux</a>
+					<a href="./recutil-win32-20170106.zip">Windows</a>
+				</td>
+			</tr>
+			
+			<!-- 2016/2 -->
+			<tr>
+				<td class="entry">02-Feb-2016</td>
+				<td class="entry"><a href="releases/201602.html">2016/2</a></td>
+				<td class="entry">
+					<a href="./recutil-mac-carbon-v1.0.12-20022008.zip">Mac</a>
+					<a href="./recutil-linux_gtk-v1.1.12_10aug2011.tar.gz">Linux</a>
+					<a href="./recutil-win32-20160209.zip">Windows</a>
+				</td>
+			</tr>
 
 			<!-- 2016/1 -->
 			<tr>
-				<td class="entry">26-Jan-2015</td>
+				<td class="entry">14-Jan-2016</td>
 				<td class="entry"><a href="releases/201601.html">2016/1</a></td>
 				<td class="entry">
 					<a href="./recutil-mac-carbon-v1.0.12-20022008.zip">Mac</a>

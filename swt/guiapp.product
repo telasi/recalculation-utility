@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.4"?>
 
-<product name="RecUtil" id="telasi.recutil.guiapp.product" application="telasi.recutil.guiapp.application" version="2016" useFeatures="false">
+<product name="RecUtil" id="telasi.recutil.guiapp.product" application="telasi.recutil.guiapp.application" version="2017" useFeatures="false">
 
    <aboutInfo>
       <image path="/recalculation_utility_swt_1.0.1/about.gif"/>
@@ -29,6 +29,7 @@
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
