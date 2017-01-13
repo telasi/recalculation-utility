@@ -152,7 +152,7 @@ public class DivisionDateFactory {
 		RECHARGE.add(new Integer(692)); // 2014
 		RECHARGE.add(new Integer(792)); // 2015
 		RECHARGE.add(new Integer(892)); // 2016
-		RECHARGE.add(new Integer(1126)); // 2017
+		RECHARGE.add(new Integer(895)); // 2017
 		// discharges
 		DISCHARGE.add(new Integer(189)); // 1999
 		DISCHARGE.add(new Integer(280)); // 2000
@@ -174,7 +174,7 @@ public class DivisionDateFactory {
 		DISCHARGE.add(new Integer(691)); // 2014
 		DISCHARGE.add(new Integer(791)); // 2015
 		DISCHARGE.add(new Integer(891)); // 2016
-		DISCHARGE.add(new Integer(1125)); // 2017
+		DISCHARGE.add(new Integer(894)); // 2017
 		// percent rechages
 		PERCENT_RECHARGE.add(new Integer(190)); // 1999
 		PERCENT_RECHARGE.add(new Integer(271)); // 2000
@@ -240,7 +240,7 @@ public class DivisionDateFactory {
 		BALANCE_CORRECTION.add(new Integer(693)); // 2014
 		BALANCE_CORRECTION.add(new Integer(793)); // 2015
 		BALANCE_CORRECTION.add(new Integer(893)); // 2016
-		BALANCE_CORRECTION.add(new Integer(1127)); // 2017
+		BALANCE_CORRECTION.add(new Integer(896)); // 2017
 		// service discharge
 		SERVICE_DISCHARGE.add(new Integer(200)); // 1999
 		SERVICE_DISCHARGE.add(new Integer(200)); // 2000
@@ -438,7 +438,7 @@ public class DivisionDateFactory {
 		ONE_TIME_ACTS.add(new Integer(418)); // 2014
 		ONE_TIME_ACTS.add(new Integer(421)); // 2015
 		ONE_TIME_ACTS.add(new Integer(180)); // 2016
-		ONE_TIME_ACTS.add(new Integer(1124)); // 2017
+		ONE_TIME_ACTS.add(new Integer(422)); // 2017
 	}
 
 	public static int getYearIndex(int year, boolean firstHalf) {
