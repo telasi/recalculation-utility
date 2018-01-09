@@ -52,6 +52,17 @@
 				<td width="33%">პლატფორმები</td>
 			</tr>
 			
+			<!-- 2018 -->
+			<tr>
+				<td class="entry">09-Jan-2018</td>
+				<td class="entry"><a href="releases/2018.html">2018</a></td>
+				<td class="entry">
+					<a href="./recutil-mac-carbon-v1.0.12-20022008.zip">Mac</a>
+					<a href="./recutil-linux_gtk-v1.1.12_10aug2011.tar.gz">Linux</a>
+					<a href="./recutil-win32-20180109.zip">Windows</a>
+				</td>
+			</tr>
+			
 			<!-- 2017 -->
 			<tr>
 				<td class="entry">06-Jan-2017</td>
