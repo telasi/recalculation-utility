@@ -51,6 +51,17 @@
 				<td width="33%">ვერსია</td>
 				<td width="33%">პლატფორმები</td>
 			</tr>
+
+			<!-- 2019 -->
+			<tr>
+				<td class="entry">01-Jan-2019</td>
+				<td class="entry"><a href="releases/2019.html">2019</a></td>
+				<td class="entry">
+					<a href="./recutil-win32-20190101.zip">Windows</a>
+				</td>
+			</tr>
+
+
 			
 			<!-- 2018 -->
 			<tr>
