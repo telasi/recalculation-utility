@@ -55,7 +55,7 @@
 			<!-- 2020 -->
 			<tr>
 				<td class="entry">01-Jan-2020</td>
-				<td class="entry"><a href="releases/2020.html">2019</a></td>
+				<td class="entry"><a href="releases/2020.html">2020</a></td>
 				<td class="entry">
 					<a href="./recutil-win32-20200108.zip">Windows</a>
 				</td>

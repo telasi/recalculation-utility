@@ -37,8 +37,8 @@ public class DivisionDateFactory {
 		// exception dates list
 		List exceptionDates = new ArrayList();
 
-		// years from 1999 to 2020
-		for (int year = 1999; year < 2020; year++) {
+		// years from 1999 to 2050
+		for (int year = 1999; year < 2050; year++) {
 
 			DivisionDate dd = new DivisionDate();
 			dd.date = new Date(year, 12, 31); // 31-Dec-YYYY
