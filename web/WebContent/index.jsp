@@ -51,6 +51,15 @@
 				<td width="33%">ვერსია</td>
 				<td width="33%">პლატფორმები</td>
 			</tr>
+
+			<!-- 2020 V2-->
+			<tr>
+				<td class="entry">01-Jan-2020</td>
+				<td class="entry"><a href="releases/2020_V2.html">2020</a></td>
+				<td class="entry">
+					<a href="./recutil-win32-20200127.zip">Windows</a>
+				</td>
+			</tr>
 			
 			<!-- 2020 -->
 			<tr>

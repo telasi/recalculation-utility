@@ -31,7 +31,8 @@ import javax.sql.DataSource;
  */
 public class Session {
 	private static final boolean TEST = true;
-	private static String DEFAULT_URL = TEST ? "jdbc:oracle:thin:@192.168.1.247:1521:ORCL" : "jdbc:oracle:thin:@192.168.1.10:1521:ORCL";
+	private static String DEFAULT_URL = TEST ? "jdbc:oracle:thin:@192.168.1.247:1521:ORCL" : "jdbc:oracle:thin:@10.235.170.10:1521:BLNG";
+//  private static String DEFAULT_URL = TEST ? "jdbc:oracle:thin:@192.168.1.247:1521:ORCL" : "jdbc:oracle:thin:@192.168.1.10:1521:ORCL";
 	private static final String PASSWORD = TEST ? "mtXzlkJ45832xxyzuitv" : "azpT883xyi99";
 
 	private static final String USER = "recut";
