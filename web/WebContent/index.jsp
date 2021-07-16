@@ -53,6 +53,13 @@
 			</tr>
 			<tr>
 				<td class="entry">01-Jan-2021</td>
+				<td class="entry"><a href="releases/2021.html">2021-1</a></td>
+				<td class="entry">
+					<a href="./recutil-win32-20210716.zip">Windows</a>
+				</td>
+			</tr>			
+			<tr>
+				<td class="entry">01-Jan-2021</td>
 				<td class="entry"><a href="releases/2021.html">2021</a></td>
 				<td class="entry">
 					<a href="./recutil-win32-20210108.zip">Windows</a>
