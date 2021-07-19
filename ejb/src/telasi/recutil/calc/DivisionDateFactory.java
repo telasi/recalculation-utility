@@ -109,6 +109,31 @@ public class DivisionDateFactory {
 				dd2011.oneTimeActId = getOneTimeActCorrectionId(year, true);
 				exceptionDates.add(dd2011);
 			}
+			
+
+			// test code telmico telasi
+			if (year == 2021) {
+				dd.type = IDivisionDate.ON_CYCLE;
+				dd.date = new Date(year, 6, 30); // 30-Jun-2021
+
+				DivisionDate dd2021 = new DivisionDate();
+				dd2021.date = new Date(year, 12, 31); // 31-Dec-2021
+				dd2021.type = IDivisionDate.ON_CYCLE;
+				dd2021.rechargeId = getRechargeId(year, true);
+				dd2021.dischargeId = getDischargeId(year, true);
+				dd2021.percentSubsRechargeId = getPercentSubsRechargeId(year);
+				dd2021.percentSubsDischargeId = getPercentSubsDischargeId(year);
+				dd2021.balanceCorrectionId = getBalanceCorrectionId(year);
+				dd2021.serviceDischargeId = getServiceDischargeId(year, true);
+				dd2021.serviceRechargeId = getServiceRechargeId(year, true);
+				dd2021.compensationDischargeId = getCompensationDischargeId(year, true);
+				dd2021.compensationRechargeId = getCompensationRechargeId(year, true);
+				dd2021.pensionCorrectionId = getPensionCorrectionId(year);
+				dd2021.USAIDCorrectionId = getUSAIDCorrectionId(year);
+				dd2021.fixKwhSubsidyCorrectionId = getFixKwhSubsidyCorrectionId(year);
+				dd2021.oneTimeActId = getOneTimeActCorrectionId(year, true);
+				exceptionDates.add(dd2021);
+			}			
 		}
 
 		// return results
@@ -156,7 +181,7 @@ public class DivisionDateFactory {
 		RECHARGE.add(new Integer(898)); // 2018
 		RECHARGE.add(new Integer(901)); // 2019	
 		RECHARGE.add(new Integer(904)); // 2020
-		RECHARGE.add(new Integer(910)); // 2021		
+		RECHARGE.add(new Integer(907)); // 2021		
 		RECHARGE.add(new Integer(910)); // 2021-1
 		// discharges
 		DISCHARGE.add(new Integer(189)); // 1999
@@ -183,7 +208,7 @@ public class DivisionDateFactory {
 		DISCHARGE.add(new Integer(897)); // 2018
 		DISCHARGE.add(new Integer(900)); // 2019
 		DISCHARGE.add(new Integer(903)); // 2020
-		DISCHARGE.add(new Integer(909)); // 2021
+		DISCHARGE.add(new Integer(906)); // 2021
 		DISCHARGE.add(new Integer(909)); // 2021-1
 		// percent rechages
 		PERCENT_RECHARGE.add(new Integer(190)); // 1999
