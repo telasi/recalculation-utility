@@ -183,7 +183,8 @@ public class DivisionDateFactory {
 		RECHARGE.add(new Integer(904)); // 2020
 		RECHARGE.add(new Integer(907)); // 2021		
 		RECHARGE.add(new Integer(910)); // 2021-1
-		RECHARGE.add(new Integer(912)); // 2022		
+		RECHARGE.add(new Integer(912)); // 2022
+		RECHARGE.add(new Integer(912)); // 2022-1
 		// discharges
 		DISCHARGE.add(new Integer(189)); // 1999
 		DISCHARGE.add(new Integer(280)); // 2000
@@ -211,7 +212,8 @@ public class DivisionDateFactory {
 		DISCHARGE.add(new Integer(903)); // 2020
 		DISCHARGE.add(new Integer(906)); // 2021
 		DISCHARGE.add(new Integer(909)); // 2021-1
-		DISCHARGE.add(new Integer(911)); // 2022		
+		DISCHARGE.add(new Integer(911)); // 2022
+		DISCHARGE.add(new Integer(911)); // 2022-1
 		// percent rechages
 		PERCENT_RECHARGE.add(new Integer(190)); // 1999
 		PERCENT_RECHARGE.add(new Integer(271)); // 2000
@@ -239,6 +241,8 @@ public class DivisionDateFactory {
 		PERCENT_RECHARGE.add(new Integer(599)); // 2020
 		PERCENT_RECHARGE.add(new Integer(599)); // 2021
 		PERCENT_RECHARGE.add(new Integer(599)); // 2021-1
+		PERCENT_RECHARGE.add(new Integer(599)); // 2022
+		PERCENT_RECHARGE.add(new Integer(599)); // 2022-1
 		// percent dischages
 		PERCENT_DISCHARGE.add(new Integer(305)); // 1999
 		PERCENT_DISCHARGE.add(new Integer(305)); // 2000
@@ -266,6 +270,8 @@ public class DivisionDateFactory {
 		PERCENT_DISCHARGE.add(new Integer(598)); // 2020
 		PERCENT_DISCHARGE.add(new Integer(598)); // 2021
 		PERCENT_DISCHARGE.add(new Integer(598)); // 2021-1
+		PERCENT_DISCHARGE.add(new Integer(598)); // 2022
+		PERCENT_DISCHARGE.add(new Integer(598)); // 2022-1
 		// balance correction
 		BALANCE_CORRECTION.add(new Integer(94)); // 1999
 		BALANCE_CORRECTION.add(new Integer(95)); // 2000
@@ -294,6 +300,7 @@ public class DivisionDateFactory {
 		BALANCE_CORRECTION.add(new Integer(908)); // 2021
 		BALANCE_CORRECTION.add(new Integer(908)); // 2021-1
 		BALANCE_CORRECTION.add(new Integer(913)); // 2022
+		BALANCE_CORRECTION.add(new Integer(913)); // 2022-1
 		// service discharge
 		SERVICE_DISCHARGE.add(new Integer(200)); // 1999
 		SERVICE_DISCHARGE.add(new Integer(200)); // 2000
@@ -321,6 +328,8 @@ public class DivisionDateFactory {
 		SERVICE_DISCHARGE.add(new Integer(201)); // 2020
 		SERVICE_DISCHARGE.add(new Integer(201)); // 2021
 		SERVICE_DISCHARGE.add(new Integer(201)); // 2021-1
+		SERVICE_DISCHARGE.add(new Integer(201)); // 2022
+		SERVICE_DISCHARGE.add(new Integer(201)); // 2022-1
 		// service recharge
 		SERVICE_RECHARGE.add(new Integer(200)); // 1999
 		SERVICE_RECHARGE.add(new Integer(200)); // 2000
@@ -348,6 +357,8 @@ public class DivisionDateFactory {
 		SERVICE_RECHARGE.add(new Integer(201)); // 2020
 		SERVICE_RECHARGE.add(new Integer(201)); // 2021
 		SERVICE_RECHARGE.add(new Integer(201)); // 2021-1
+		SERVICE_RECHARGE.add(new Integer(201)); // 2022
+		SERVICE_RECHARGE.add(new Integer(201)); // 2022-1
 		// compensation discharge
 		COMPENSATION_DISCHARGE.add(new Integer(103)); // 1999
 		COMPENSATION_DISCHARGE.add(new Integer(297)); // 2000
@@ -375,6 +386,8 @@ public class DivisionDateFactory {
 		COMPENSATION_DISCHARGE.add(new Integer(595)); // 2020
 		COMPENSATION_DISCHARGE.add(new Integer(595)); // 2021
 		COMPENSATION_DISCHARGE.add(new Integer(595)); // 2021-1
+		COMPENSATION_DISCHARGE.add(new Integer(595)); // 2022
+		COMPENSATION_DISCHARGE.add(new Integer(595)); // 2022-1
 		// compensation recharge
 		COMPENSATION_RECHARGE.add(new Integer(103)); // 1999
 		COMPENSATION_RECHARGE.add(new Integer(203)); // 2000
@@ -402,6 +415,8 @@ public class DivisionDateFactory {
 		COMPENSATION_RECHARGE.add(new Integer(596)); // 2020
 		COMPENSATION_RECHARGE.add(new Integer(596)); // 2021
 		COMPENSATION_RECHARGE.add(new Integer(596)); // 2021-1
+		COMPENSATION_RECHARGE.add(new Integer(596)); // 2022
+		COMPENSATION_RECHARGE.add(new Integer(596)); // 2022-1
 		// pension correction
 		PENSION_CORRECTION.add(new Integer(100)); // 1999
 		PENSION_CORRECTION.add(new Integer(101)); // 2000
@@ -429,6 +444,8 @@ public class DivisionDateFactory {
 		PENSION_CORRECTION.add(new Integer(102)); // 2020
 		PENSION_CORRECTION.add(new Integer(102)); // 2021
 		PENSION_CORRECTION.add(new Integer(102)); // 2021-1
+		PENSION_CORRECTION.add(new Integer(102)); // 2022
+		PENSION_CORRECTION.add(new Integer(102)); // 2022-1
 		// USAID correction
 		USAID_CORRECTION.add(new Integer(72)); // 1999
 		USAID_CORRECTION.add(new Integer(107)); // 2000
@@ -456,6 +473,8 @@ public class DivisionDateFactory {
 		USAID_CORRECTION.add(new Integer(163)); // 2020
 		USAID_CORRECTION.add(new Integer(163)); // 2021
 		USAID_CORRECTION.add(new Integer(163)); // 2021-1
+		USAID_CORRECTION.add(new Integer(163)); // 2022
+		USAID_CORRECTION.add(new Integer(163)); // 2022-1
 		// FIX_KWH correction
 		FIX_KWH_CORRECTION.add(new Integer(97)); // 1999
 		FIX_KWH_CORRECTION.add(new Integer(98)); // 2000
@@ -483,6 +502,8 @@ public class DivisionDateFactory {
 		FIX_KWH_CORRECTION.add(new Integer(173)); // 2020
 		FIX_KWH_CORRECTION.add(new Integer(173)); // 2021
 		FIX_KWH_CORRECTION.add(new Integer(173)); // 2021-1
+		FIX_KWH_CORRECTION.add(new Integer(173)); // 2022
+		FIX_KWH_CORRECTION.add(new Integer(173)); // 2022-1
 		// CHARGE correction
 		CHARGE_CORRECTION.add(new Integer(293)); // 1999
 		CHARGE_CORRECTION.add(new Integer(78)); // 2000
@@ -510,6 +531,8 @@ public class DivisionDateFactory {
 		CHARGE_CORRECTION.add(new Integer(790)); // 2020
 		CHARGE_CORRECTION.add(new Integer(790)); // 2021
 		CHARGE_CORRECTION.add(new Integer(790)); // 2021-1
+		CHARGE_CORRECTION.add(new Integer(790)); // 2022
+		CHARGE_CORRECTION.add(new Integer(790)); // 2022-1
 		// ONE_TIME_ACT correction
 		ONE_TIME_ACTS.add(new Integer(401)); // 1999
 		ONE_TIME_ACTS.add(new Integer(402)); // 2000
