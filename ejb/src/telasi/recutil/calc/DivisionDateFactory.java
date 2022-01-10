@@ -183,6 +183,7 @@ public class DivisionDateFactory {
 		RECHARGE.add(new Integer(904)); // 2020
 		RECHARGE.add(new Integer(907)); // 2021		
 		RECHARGE.add(new Integer(910)); // 2021-1
+		RECHARGE.add(new Integer(912)); // 2022		
 		// discharges
 		DISCHARGE.add(new Integer(189)); // 1999
 		DISCHARGE.add(new Integer(280)); // 2000
@@ -210,6 +211,7 @@ public class DivisionDateFactory {
 		DISCHARGE.add(new Integer(903)); // 2020
 		DISCHARGE.add(new Integer(906)); // 2021
 		DISCHARGE.add(new Integer(909)); // 2021-1
+		DISCHARGE.add(new Integer(911)); // 2022		
 		// percent rechages
 		PERCENT_RECHARGE.add(new Integer(190)); // 1999
 		PERCENT_RECHARGE.add(new Integer(271)); // 2000
@@ -291,6 +293,7 @@ public class DivisionDateFactory {
 		BALANCE_CORRECTION.add(new Integer(905)); // 2020
 		BALANCE_CORRECTION.add(new Integer(908)); // 2021
 		BALANCE_CORRECTION.add(new Integer(908)); // 2021-1
+		BALANCE_CORRECTION.add(new Integer(913)); // 2022
 		// service discharge
 		SERVICE_DISCHARGE.add(new Integer(200)); // 1999
 		SERVICE_DISCHARGE.add(new Integer(200)); // 2000
@@ -534,6 +537,8 @@ public class DivisionDateFactory {
 		ONE_TIME_ACTS.add(new Integer(425)); // 2020
 		ONE_TIME_ACTS.add(new Integer(426)); // 2021
 		ONE_TIME_ACTS.add(new Integer(183)); // 2021-1
+		ONE_TIME_ACTS.add(new Integer(427)); // 2022	
+		ONE_TIME_ACTS.add(new Integer(428)); // 2022-1		
 	}
 
 	public static int getYearIndex(int year, boolean firstHalf) {
@@ -584,9 +589,11 @@ public class DivisionDateFactory {
 		case 2019:
 			return 22;
 		case 2020:
-			return 23;			
+			return 23;
+		case 2021:
+			return firstHalf ? 24 : 25;			
 		default:
-			return  firstHalf ? 24 : 25; // 2021 - +
+			return  firstHalf ? 26 : 27; // 2022 - +
 		}
 	}
 
