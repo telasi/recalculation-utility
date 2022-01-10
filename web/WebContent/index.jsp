@@ -53,7 +53,7 @@
 			</tr>
 			<tr>
 				<td class="entry">01-Jan-2022</td>
-				<td class="entry"><a href="releases/2022.html">2021-2</a></td>
+				<td class="entry"><a href="releases/2022.html">2022-1</a></td>
 				<td class="entry">
 					<a href="./recutil-win32-20220110.zip">Windows</a>
 				</td>
