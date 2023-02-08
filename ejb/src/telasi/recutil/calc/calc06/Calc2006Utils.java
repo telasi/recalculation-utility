@@ -162,7 +162,7 @@ public class Calc2006Utils {
 
 		if (useRound) {
 			// return Math.round(read2 * coeff - read1 * coeff);
-			return Math.round(read2 * coeff) - Math.round(read1 * coeff);
+			return (Math.round(read2 * coeff - read1 * coeff)*10)/10;
 		} else {
 			return (read2 - read1) * coeff;
 		}

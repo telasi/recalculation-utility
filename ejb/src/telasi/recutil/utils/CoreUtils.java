@@ -29,8 +29,8 @@ import telasi.recutil.beans.SubsidyAttachment;
  * @author dimakura
  */
 public class CoreUtils {
-	public static final double MIN_KWH = 0.099;
-	public static final double MIN_GEL = 0.0099;
+	public static final double MIN_KWH = 0.0001;
+	public static final double MIN_GEL = 0.00001;
 	public static final int ZERO_TARIFF_ID = 12;
 
 	public static RecalcItem copyRecalcItem(RecalcItem proto) {
