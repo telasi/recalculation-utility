@@ -193,7 +193,7 @@ public class Utilities {
 			read2 += meterMaxReading;
 		/* when interval dates are equal */
 		if (Date.isEqual(d1, d2))
-			return round(r2, 2);
+			return round(r2, 6);
 		/* distinctions */
 		int interval1 = Date.getIntervalInDays(d2, d1);
 		int interval2 = Date.getIntervalInDays(d, d1);
@@ -206,7 +206,7 @@ public class Utilities {
 			if (Math.abs(newReading) < CoreUtils.MIN_KWH)
 				newReading = meterMaxReading;
 		}
-		return round(newReading, 2);
+		return round(newReading, 6);
 	}
 
 	/**
@@ -237,7 +237,8 @@ public class Utilities {
 		coeff *= factor;
 		while (read1 > read2)
 			read2 += Math.pow(10, digits);
-		return round(read2 * coeff, 0) - round(read1 * coeff, 0);
+//		return round(read2 * coeff, 0) - round(read1 * coeff, 0);
+		return round((read2 * coeff - read1 * coeff), 6);
 	}
 
 	/**
@@ -997,7 +998,7 @@ public class Utilities {
 		double balance = interval.getStartBalance();
 		for (int k = 0; k < derived.getItems().size(); k++) {
 			CalculationItem item = (CalculationItem) derived.getItems().get(k);
-			item.setReading(round(item.getReading()));
+			item.setReading(round(item.getReading(),6));
 			double gel = round(item.getCharge().getGel());
 			if (isLikePayment(item.getOperation()))
 				balance -= Math.abs(gel);
@@ -1982,7 +1983,7 @@ public class Utilities {
 			calc.forceEstimateCorrection = true;
 			calc.estimateReading = deriveReading(calc.prevActReading.getReading(), calc.newReading.getReading(), calc.prevActReading.getItemDate(), calc.newReading.getItemDate(), calc.prevReading.getItemDate(), calc.newReading.getMeter().getDigits(), true);
 			double kwh = deriveKwh(calc.newReading.getReading(), calc.estimateReading, calc.newReading.getMeterCoeff(), calc.newReading.getMeter().getDigits(), calc.newReading.getMeterAcceleration());
-			ChargeElement elmnt = createChargeElement(d1, d2, round(kwh), 0, -1, false, false);
+			ChargeElement elmnt = createChargeElement(d1, d2, round(kwh,1), 0, -1, false, false);
 			calc.charge.clear();
 			calc.charge.addElement(elmnt);
 			calc.newOperationId = Operation.READING;
@@ -1990,7 +1991,7 @@ public class Utilities {
 		// b. previous is actual reading
 		else {
 			double kwh = deriveKwh(calc.newReading.getReading(), calc.prevActReading.getReading(), calc.newReading.getMeterCoeff(), calc.newReading.getMeter().getDigits(), calc.newReading.getMeterAcceleration());
-			ChargeElement elmnt = createChargeElement(d1, d2, round(kwh), 0, -1, false, false);
+			ChargeElement elmnt = createChargeElement(d1, d2, round(kwh,1), 0, -1, false, false);
 			calc.charge.clear();
 			calc.charge.addElement(elmnt);
 			calc.newOperationId = Operation.READING;
@@ -2101,7 +2102,7 @@ public class Utilities {
 				calc.forceEstimateCorrection = true;
 				calc.estimateReading = deriveReading(calc.prevActReading.getReading(), calc.newReading.getReading(), calc.prevActReading.getItemDate(), calc.newReading.getItemDate(), calc.prevReading.getItemDate(), calc.newReading.getMeter().getDigits(), true);
 				double kwh = deriveKwh(calc.newReading.getReading(), calc.estimateReading, calc.newReading.getMeterCoeff(), calc.newReading.getMeter().getDigits(), calc.newReading.getMeterAcceleration());
-				ChargeElement elmnt = createChargeElement(d1, d2, round(kwh), 0, -1, false, false);
+				ChargeElement elmnt = createChargeElement(d1, d2, round(kwh,1), 0, -1, false, false);
 				calc.charge.clear();
 				calc.charge.addElement(elmnt);
 				calc.newOperationId = Operation.READING;
@@ -2111,7 +2112,7 @@ public class Utilities {
 			 */
 			else {
 				double kwh = deriveKwh(calc.newReading.getReading(), calc.prevActReading.getReading(), calc.newReading.getMeterCoeff(), calc.newReading.getMeter().getDigits(), calc.newReading.getMeterAcceleration());
-				ChargeElement elmnt = createChargeElement(d1, d2, round(kwh), 0, -1, false, false);
+				ChargeElement elmnt = createChargeElement(d1, d2, round(kwh,1), 0, -1, false, false);
 				calc.charge.clear();
 				calc.charge.addElement(elmnt);
 			}
@@ -3402,7 +3403,7 @@ public class Utilities {
 					 * it is neccessary in any other cases.
 					 */
 					if (!exactCut) {
-						kwh = round(kwh, 2);
+						kwh = round(kwh, 1);
 						gel = round(gel, 2);
 					}
 					ChargeElement element = createChargeElement(null, null, kwh, gel, -1, false, false);
